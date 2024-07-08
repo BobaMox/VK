@@ -1,12 +1,14 @@
 import requests
+from pprint import pprint
 
-url = 'https://vk.com/ru/method/photos.get'
+
+url = 'https://api.vk.com/method/photos.get?'
 params = {
-    'user_ids' : '110168',
-    'fields' : 'bdate',
-    'access_token' : '...',
-    'v' : '5.199 HTTP/1.1'
+    'owner_id' : '324267239',
+    'album_id' : 'profile',
+    'access_token' : access_token,
+    'v' : '5.199'
 }
 
 response = requests.get(url, params=params)
-print(response.status_code)
+pprint(response.json())
